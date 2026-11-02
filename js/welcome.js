@@ -1,5 +1,3 @@
-// Welcome page JavaScript
-
 // Greeting that changes with the time of day
 const today = new Date();
 const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];

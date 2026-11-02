@@ -1,6 +1,4 @@
-// About page JavaScript
-
-// Information about me, held in a JSON object
+// Information about me held in a JSON object
 const me = {
   "name": "Ugnius Liutinskis",
   "course": "Creative Computing",
@@ -12,7 +10,7 @@ const me = {
   "hobbies": ["Gym", "Music", "Gaming"]
 };
 
-// work out my age from my date of birth
+// Works out my age from my date of birth
 const calcAge = (dob) => {
   let parts = dob.split("-");
   let birthYear = parseInt(parts[0]);
@@ -23,7 +21,7 @@ const calcAge = (dob) => {
   let month = today.getMonth() + 1;
   let age = today.getFullYear() - birthYear;
 
-  // take 1 off if my birthday hasn't happened yet this year
+  // Takes 1 off if my birthday hasn't happened yet this year
   if (month < birthMonth) {
     age--;
   } else if (month === birthMonth && today.getDate() < birthDay) {

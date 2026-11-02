@@ -1,10 +1,8 @@
-// Playlist page JavaScript
-
-// Show the songs in the table
+// Shows the songs in the table
 const table = document.querySelector("table");
 const message = document.querySelector("#message");
 
-// turn a rating number into stars, e.g. 3 = ★★★
+// Turn a rating number into stars
 const makeStars = (rating) => {
   let stars = "";
   for (let i = 0; i < rating; i++) {
@@ -13,7 +11,7 @@ const makeStars = (rating) => {
   return stars;
 }
 
-// show a list of songs in the table
+// Shows a list of songs in the table
 const displaySongs = (list) => {
   table.textContent = "";
   message.textContent = `Showing ${list.length} of ${songs.length} songs`;
@@ -38,7 +36,7 @@ const displaySongs = (list) => {
 
 displaySongs(songs);
 
-// Work out the numbers under the table
+// Works out the numbers under the table
 const updateStats = () => {
   let totalSeconds = 0;
   let totalRating = 0;
@@ -92,7 +90,7 @@ document.querySelector("#close").addEventListener("click", () => {
   dialog.close();
 });
 
-// add a song
+// Add a song
 const addSong = () => {
   let length = songForm.elements.songLength.value;
   let year = parseInt(songForm.elements.year.value);
@@ -143,7 +141,7 @@ searchForm.addEventListener("submit", (evt) => {
   displaySongs(results);
 });
 
-// show every song again
+// Show every song again
 document.querySelector("#showAll").addEventListener("click", () => {
   searchForm.reset();
   displaySongs(songs);

@@ -1,5 +1,4 @@
-// JSON array of objects: every song in my playlist
-// (this file is loaded on every page, so all 3 pages can use the songs and the functions below)
+// JSON array of objects: every song in my playlist for the website
 const songs = [
   {
     "id": 1,
@@ -83,25 +82,24 @@ const songs = [
   }
 ];
 
-// Footer year on every page
 document.querySelector("#footerYear").textContent = new Date().getFullYear();
 
-// Helper functions that the pages share
+// Helper functions (the pages share them)
 
-// turn a length like "3:45" into seconds (225)
+// Turns a length like "3:45" into seconds
 const toSeconds = (length) => {
   let parts = length.split(":");
   return parseInt(parts[0]) * 60 + parseInt(parts[1]);
 }
 
-// turn seconds (225) back into a length like "3:45"
+// Turns seconds back into a length like "3:45"
 const formatTime = (seconds) => {
   let mins = Math.floor(seconds / 60);
   let secs = seconds % 60;
   return secs < 10 ? `${mins}:0${secs}` : `${mins}:${secs}`;
 }
 
-// make every word start with a capital letter
+// Makes every word start with a capital letter
 const capitalise = (str) => {
   let formattedName = "";
   let words = str.split(" ");
