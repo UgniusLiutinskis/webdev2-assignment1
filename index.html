@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Home | My Playlist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fa fa-music"></i> My Playlist</h1>
+    <nav>
+      <a href="index.html" class="active">Home</a>
+      <a href="playlist.html">Playlist</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="welcome">
+      <div class="welcome-text">
+        <p id="greeting"></p>
+        <p id="clock"></p>
+        <h2>Welcome to My Playlist</h2>
+        <p>
+          Music is a big part of my day. I listen to it in the gym and when I am travelling.
+          I also listen to it when I am studying. This website is about the songs I listen to the most.
+        </p>
+        <p>
+          On the <a href="playlist.html">Playlist</a> page you can see all of my songs.
+          You can also add a new song or delete one. There is a search to help you find a song by its title or artist.
+        </p>
+        <p id="summary"></p>
+      </div>
+      <div class="welcome-image">
+        <img src="images/headphones.jpg" alt="Headphones" id="rollover">
+        <p class="caption">Hover over the picture</p>
+      </div>
+    </section>
+
+    <h2>What is stored about each song?</h2>
+    <section class="boxes">
+      <div class="box">
+        <i class="fa fa-music fa-2x"></i>
+        <h3>Title and Artist</h3>
+        <p>The name of the song and the artist who made it.</p>
+      </div>
+      <div class="box">
+        <i class="fa fa-headphones fa-2x"></i>
+        <h3>Genre</h3>
+        <p>Pop, Rock, Hip Hop, Dance or Indie.</p>
+      </div>
+      <div class="box">
+        <i class="fa fa-clock-o fa-2x"></i>
+        <h3>Length and Year</h3>
+        <p>How long the song is and when it came out.</p>
+      </div>
+      <div class="box">
+        <i class="fa fa-star fa-2x"></i>
+        <h3>Rating</h3>
+        <p>My rating out of 5. It also says if it is one of my favourites.</p>
+      </div>
+    </section>
+
+    <section class="panels">
+      <div class="panel">
+        <h3>Song of the Day</h3>
+        <p>Can't decide what to listen to? Let the website pick a random song from my playlist.</p>
+        <button id="randomBtn">Pick a Song</button>
+        <p id="songOfDay"></p>
+      </div>
+      <div class="panel">
+        <h3>Say Hello</h3>
+        <form id="nameForm">
+          <div class="form-row">
+            <label for="username">Your Name</label>
+            <input type="text" name="username" id="username" required>
+          </div>
+          <button type="submit">Enter</button>
+        </form>
+        <p id="welcomeMsg"></p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="footerYear"></span> Ugnius Liutinskis</p>
+  </footer>
+
+  <script src="js/songs.js"></script>
+  <script src="js/welcome.js"></script>
+</body>
+</html>

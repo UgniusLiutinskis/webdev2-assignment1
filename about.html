@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>About | My Playlist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fa fa-music"></i> My Playlist</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="playlist.html">Playlist</a>
+      <a href="about.html" class="active">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>About Me</h2>
+    <section class="profile">
+      <img src="images/me.jpg" alt="Photo of me">
+      <div id="aboutMe">
+      </div>
+    </section>
+
+    <section class="about-data">
+      <h2>About the Playlist</h2>
+      <p>
+        I made this playlist from the songs I play the most. Some are songs I listen to in the gym,
+        some are songs I play when I'm studying, and some are older songs I grew up hearing.
+        Each song is stored as an object in a JSON array, and every object has the same 8 fields.
+      </p>
+      <ul id="facts"></ul>
+      <button id="readBtn">Read More</button>
+      <section id="readmore" class="hideshow">
+        <p>
+          Every song object has an id, title, artist, genre, length, year, rating out of 5 and whether it's one
+          of my favourites. The length is stored as text like "3:45", and the website splits it up to work out
+          the total time of the playlist. You can add, delete and search songs on the Playlist page.
+        </p>
+      </section>
+    </section>
+
+    <section class="about-data">
+      <h2>My Favourites</h2>
+      <button id="favBtn">Show My Favourites</button>
+      <ul id="favList"></ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="footerYear"></span> Ugnius Liutinskis</p>
+  </footer>
+
+  <script src="js/songs.js"></script>
+  <script src="js/about.js"></script>
+</body>
+</html>

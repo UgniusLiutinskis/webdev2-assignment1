@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Playlist | My Playlist</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <h1><i class="fa fa-music"></i> My Playlist</h1>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="playlist.html" class="active">Playlist</a>
+      <a href="about.html">About</a>
+    </nav>
+  </header>
+
+  <main>
+    <h2>My Songs</h2>
+
+    <section class="toolbar">
+      <form id="searchForm">
+        <input type="text" name="search" placeholder="Search by title or artist" required>
+        <button type="submit"><i class="fa fa-search"></i> Search</button>
+        <button type="button" id="showAll">Show All</button>
+      </form>
+      <div class="filter">
+        <label for="genreFilter">Genre</label>
+        <select id="genreFilter">
+          <option value="All">All</option>
+          <option value="Pop">Pop</option>
+          <option value="Rock">Rock</option>
+          <option value="Hip Hop">Hip Hop</option>
+          <option value="Dance">Dance</option>
+          <option value="Indie">Indie</option>
+        </select>
+      </div>
+      <button id="toggle"><i class="fa fa-plus"></i> Add a Song</button>
+    </section>
+
+    <p id="message"></p>
+
+    <table>
+    </table>
+
+    <section class="stats">
+      <div class="stat">
+        <h3>Songs</h3>
+        <p id="totalSongs"></p>
+      </div>
+      <div class="stat">
+        <h3>Total Time</h3>
+        <p id="totalTime"></p>
+      </div>
+      <div class="stat">
+        <h3>Average Rating</h3>
+        <p id="avgRating"></p>
+      </div>
+      <div class="stat">
+        <h3>Favourites</h3>
+        <p id="totalFavs"></p>
+      </div>
+    </section>
+
+    <dialog>
+      <header class="modal__title">
+        <h2>Add a Song<span id="close"><i class="fa fa-close"></i></span></h2>
+      </header>
+      <form id="songForm">
+        <div class="form-row">
+          <label for="songTitle">Title</label>
+          <input type="text" name="songTitle" id="songTitle" required>
+        </div>
+        <div class="form-row">
+          <label for="artist">Artist</label>
+          <input type="text" name="artist" id="artist" required>
+        </div>
+        <div class="form-row">
+          <label for="genre">Genre</label>
+          <select name="genre" id="genre" required>
+            <option value="">Select a Genre</option>
+            <option value="Pop">Pop</option>
+            <option value="Rock">Rock</option>
+            <option value="Hip Hop">Hip Hop</option>
+            <option value="Dance">Dance</option>
+            <option value="Indie">Indie</option>
+          </select>
+        </div>
+        <div class="form-row">
+          <label for="songLength">Length</label>
+          <input type="text" name="songLength" id="songLength" placeholder="e.g. 3:45" required>
+        </div>
+        <div class="form-row">
+          <label for="year">Year</label>
+          <input type="number" name="year" id="year" min="1900" required>
+        </div>
+        <div class="form-row">
+          <label>Rating</label>
+          <div class="radios">
+            <input type="radio" name="rating" id="r1" value="1"><label for="r1">1</label>
+            <input type="radio" name="rating" id="r2" value="2"><label for="r2">2</label>
+            <input type="radio" name="rating" id="r3" value="3" checked><label for="r3">3</label>
+            <input type="radio" name="rating" id="r4" value="4"><label for="r4">4</label>
+            <input type="radio" name="rating" id="r5" value="5"><label for="r5">5</label>
+          </div>
+        </div>
+        <div class="form-row">
+          <label for="favourite">Favourite?</label>
+          <input type="checkbox" name="favourite" id="favourite">
+        </div>
+        <button type="submit">Add a New Song</button>
+        <button type="reset">Clear the Info</button>
+      </form>
+    </dialog>
+  </main>
+
+  <footer>
+    <p>&copy; <span id="footerYear"></span> Ugnius Liutinskis</p>
+  </footer>
+
+  <script src="js/songs.js"></script>
+  <script src="js/playlist.js"></script>
+</body>
+</html>
