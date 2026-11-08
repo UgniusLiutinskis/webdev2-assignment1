@@ -1,5 +1,5 @@
 // JSON array of objects: every song in my playlist for the website
-const songs = [
+let songs = [
   {
     "id": 1,
     "title": "Blinding Lights",
@@ -81,6 +81,16 @@ const songs = [
     "favourite": true
   }
 ];
+
+// Load the saved songs from local storage (if there are any)
+if (localStorage.getItem("songs") !== null) {
+  songs = JSON.parse(localStorage.getItem("songs"));
+}
+
+// Save the songs array to local storage
+const saveSongs = () => {
+  localStorage.setItem("songs", JSON.stringify(songs));
+}
 
 document.querySelector("#footerYear").textContent = new Date().getFullYear();
 

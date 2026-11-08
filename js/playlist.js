@@ -71,6 +71,7 @@ table.addEventListener("click", (evt) => {
 
     if (confirm(`Delete ${songs[deleteRec].title}?`)) {
       songs.splice(deleteRec, 1);
+      saveSongs();
       displaySongs(songs);
       updateStats();
     }
@@ -80,7 +81,14 @@ table.addEventListener("click", (evt) => {
 // Open and close the Add a Song dialog
 const dialog = document.querySelector("dialog");
 const songForm = document.querySelector("#songForm");
-let nextId = songs.length + 1;
+
+// The next id is 1 more than the biggest id so far
+let nextId = 1;
+songs.forEach((song) => {
+  if (song.id >= nextId) {
+    nextId = song.id + 1;
+  }
+});
 
 document.querySelector("#toggle").addEventListener("click", () => {
   dialog.showModal();
@@ -113,6 +121,7 @@ const addSong = () => {
 
     nextId++;
     songs.push(newSong);
+    saveSongs();
 
     displaySongs(songs);
     updateStats();
